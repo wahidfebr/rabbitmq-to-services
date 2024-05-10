@@ -1,5 +1,5 @@
 {
-  "name": "rabbitmq-to-services",
+  "name": "rabbitmq-to-services-task1",
   "version": "1.0.0",
   "description": "Using rabbitmq as request buffer into services",
   "author": "wahidfebr@gmail.com",
