@@ -16,4 +16,13 @@ export class Test01Service {
     }
     return data.toJSON();
   }
+
+  async update(_props: ITest01StoreDTO, id: number): Promise<ITest01> {
+    const data = await Test01Persistence.findByPk(id);
+    if (!data) {
+      throw new NotFoundException(`test01 with id ${id} was not found`);
+    }
+    await data.update(_props);
+    return data.toJSON();
+  }
 }
