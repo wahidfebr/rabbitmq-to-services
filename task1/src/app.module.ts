@@ -11,7 +11,7 @@ import { Dialect } from 'sequelize';
     }),
     SequelizeModule.forRoot({
       dialect: <Dialect>process.env.DB_DIALECT || 'mysql',
-      host: process.env.DB_HOST || 'localhost',
+      host: process.env.DB_HOST || '127.0.0.1',
       port: parseInt(<string>process.env.DB_PORT) || 3306,
       username: process.env.DB_USERNAME || 'root',
       password: process.env.DB_PASSWORD || '',

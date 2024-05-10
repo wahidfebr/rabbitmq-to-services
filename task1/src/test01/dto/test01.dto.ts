@@ -5,3 +5,8 @@ export interface ITest01 {
   createdAt?: Date;
   updatedAt?: Date;
 }
+
+export interface ITest01StoreDTO {
+  nama: string;
+  status: number;
+}
