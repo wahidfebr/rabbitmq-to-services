@@ -30,6 +30,8 @@ Task 1: Simple CRUD Web API
 
 ```bash
 $ npm install
+
+# setup env and create database
 ```
 
 ## Running the app
