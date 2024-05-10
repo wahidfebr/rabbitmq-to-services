@@ -3,6 +3,8 @@ import {
   Body,
   Controller,
   Get,
+  Param,
+  ParseIntPipe,
   Post,
 } from '@nestjs/common';
 import { ITest01, ITest01StoreDTO } from '../dto/test01.dto';
@@ -12,9 +14,9 @@ import { Test01Service } from '../service/test01.service';
 export class Test01Controller {
   constructor(private service: Test01Service) {}
 
-  @Get()
-  getHello() {
-    return process.env.APP_PORT;
+  @Get(':id')
+  async findById(@Param('id', ParseIntPipe) id: number) {
+    return await this.service.findById(id);
   }
 
   @Post()
