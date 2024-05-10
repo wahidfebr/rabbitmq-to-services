@@ -2,6 +2,7 @@ import {
   BadRequestException,
   Body,
   Controller,
+  Delete,
   Get,
   Param,
   ParseIntPipe,
@@ -57,5 +58,10 @@ export class Test01Controller {
     }
 
     return await this.service.update({ nama, status }, id);
+  }
+
+  @Delete(':id')
+  async destroy(@Param('id', ParseIntPipe) id: number): Promise<ITest01> {
+    return await this.service.destroy(id);
   }
 }

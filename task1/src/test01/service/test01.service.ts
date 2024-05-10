@@ -25,4 +25,13 @@ export class Test01Service {
     await data.update(_props);
     return data.toJSON();
   }
+
+  async destroy(id: number): Promise<ITest01> {
+    const data = await Test01Persistence.findByPk(id);
+    if (!data) {
+      throw new NotFoundException(`test01 with id ${id} was not found`);
+    }
+    await data.destroy();
+    return data.toJSON();
+  }
 }
