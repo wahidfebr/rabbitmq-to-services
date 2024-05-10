@@ -8,13 +8,22 @@ import {
   ParseIntPipe,
   Post,
   Put,
+  Query,
 } from '@nestjs/common';
-import { ITest01, ITest01StoreDTO } from '../dto/test01.dto';
+import { IPaginationOption, ITest01, ITest01StoreDTO } from '../dto/test01.dto';
 import { Test01Service } from '../service/test01.service';
 
 @Controller('test01')
 export class Test01Controller {
   constructor(private service: Test01Service) {}
+
+  @Get()
+  async findWithPagination(
+    @Query('page', ParseIntPipe) page: number,
+    @Query('limit', ParseIntPipe) limit: number,
+  ): Promise<ITest01[]> {
+    return await this.service.findWithPagination({ page, limit });
+  }
 
   @Get(':id')
   async findById(@Param('id', ParseIntPipe) id: number) {

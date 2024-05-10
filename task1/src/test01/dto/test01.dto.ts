@@ -10,3 +10,8 @@ export interface ITest01StoreDTO {
   nama: string;
   status: number;
 }
+
+export interface IPaginationOption {
+  page: number;
+  limit: number;
+}
