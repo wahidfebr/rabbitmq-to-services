@@ -24,7 +24,9 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Using rabbitmq as request buffer into services.
+
+Main tech stacks: NodeJS, NestJS, MySQL/MariaDB, Sequelize, RabbitMQ.
 
 ## Installation
 
@@ -64,9 +66,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Author - [Wahid Febrilianto](https://wahidfeb.my.id)
 
 ## License
 
