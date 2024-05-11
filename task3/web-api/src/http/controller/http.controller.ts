@@ -1,0 +1,37 @@
+import {
+  BadRequestException,
+  Body,
+  Controller,
+  HttpCode,
+  Post,
+} from '@nestjs/common';
+import { IDataDTO, IMessageDTO } from '../dto/http.dto';
+import { HttpService } from '../service/http.service';
+
+@Controller()
+export class HttpController {
+  constructor(private service: HttpService) {}
+
+  @Post()
+  @HttpCode(200)
+  async store(@Body() { nama, status }: IDataDTO): Promise<IMessageDTO> {
+    if (!nama) {
+      throw new BadRequestException('nama is required');
+    }
+    if (typeof nama !== 'string') {
+      throw new BadRequestException('nama should be a string');
+    }
+    if (!status) {
+      throw new BadRequestException('status is required');
+    }
+    if (typeof status !== 'number') {
+      throw new BadRequestException('status should be a number');
+    }
+
+    await this.service.store({ nama, status });
+
+    return {
+      message: 'command received successfully for creating data',
+    };
+  }
+}
