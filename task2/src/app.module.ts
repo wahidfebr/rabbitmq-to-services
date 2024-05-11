@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { Dialect } from 'sequelize';
-import { WorkerModule } from './worker/worker.module';
 import { ConsumerModule } from './consumer/consumer.module';
 import { Test01Module } from './test01/test01.module';
 
@@ -26,7 +25,6 @@ import { Test01Module } from './test01/test01.module';
       },
     }),
     Test01Module,
-    WorkerModule,
     ConsumerModule,
   ],
   controllers: [],
