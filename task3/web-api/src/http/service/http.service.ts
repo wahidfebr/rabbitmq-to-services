@@ -12,4 +12,14 @@ export class HttpService {
       data: _props,
     });
   }
+
+  async update(_props: IDataDTO, id: number): Promise<void> {
+    await this.service.sendCommand({
+      command: 'update',
+      data: {
+        ..._props,
+        id: id,
+      },
+    });
+  }
 }
