@@ -10,7 +10,7 @@ import {
   Put,
   Query,
 } from '@nestjs/common';
-import { IPaginationOption, ITest01, ITest01StoreDTO } from '../dto/test01.dto';
+import { ITest01, ITest01StoreDTO } from '../dto/test01.dto';
 import { Test01Service } from '../service/test01.service';
 
 @Controller('test01')
