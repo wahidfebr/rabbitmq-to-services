@@ -2,6 +2,7 @@ import {
   BadRequestException,
   Body,
   Controller,
+  Delete,
   HttpCode,
   Param,
   ParseIntPipe,
@@ -39,6 +40,7 @@ export class HttpController {
   }
 
   @Put(':id')
+  @HttpCode(200)
   async update(
     @Body() { nama, status }: IDataDTO,
     @Param('id', ParseIntPipe) id: number,
@@ -60,6 +62,15 @@ export class HttpController {
 
     return {
       message: 'command received successfully for updating data',
+    };
+  }
+
+  @Delete(':id')
+  @HttpCode(200)
+  async destroy(@Param('id', ParseIntPipe) id: number): Promise<IMessageDTO> {
+    await this.service.destroy(id);
+    return {
+      message: 'command received successfully for deleting data',
     };
   }
 }

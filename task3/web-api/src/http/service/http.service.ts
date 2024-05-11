@@ -22,4 +22,13 @@ export class HttpService {
       },
     });
   }
+
+  async destroy(id: number): Promise<void> {
+    await this.service.sendCommand({
+      command: 'delete',
+      data: {
+        id: id,
+      },
+    });
+  }
 }
