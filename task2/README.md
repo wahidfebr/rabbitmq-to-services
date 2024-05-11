@@ -34,6 +34,9 @@ $ npm install
 # setup env and create database
 
 # run RabbitMQ broker server https://www.rabbitmq.com/docs/download
+
+# to run RabbitMQ provider use send.js at the root folder
+$ node send.js
 ```
 
 ## Running the app
