@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ProviderService } from 'src/provider/service/provider.service';
+import { ProviderService } from '../../provider/service/provider.service';
 import { IDataDTO } from '../dto/http.dto';
 
 @Injectable()
