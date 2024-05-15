@@ -26,6 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: "./task1/package-lock.json"
     - name: Install packages (task1)
       working-directory: ./task1
       run: npm ci
