@@ -26,10 +26,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-      working-directory: task1
-    - run: npm run build --if-present
-      working-directory: task1
-    - run: npm test
-      working-directory: task1
-      
+    - name: Install packages (task1)
+      working-directory: ./task1
+      run: npm ci
+    - name: Build the app (task1)
+      working-directory: ./task1
+      run: npm run build
+    - name: Run test command (task1)
+      working-directory: ./task1
+      run: npm test
