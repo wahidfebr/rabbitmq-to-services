@@ -26,6 +26,14 @@
 
 Task 1: Simple CRUD Web API
 
+## Installation With Docker
+
+```bash
+# setup env
+
+$ docker compose up
+```
+
 ## Installation
 
 ```bash
